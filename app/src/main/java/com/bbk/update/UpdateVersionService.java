@@ -3,28 +3,19 @@ package com.bbk.update;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.FileProvider;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
-import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.PopupWindow;
 import android.widget.ProgressBar;
@@ -32,13 +23,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bbk.activity.BuildConfig;
-import com.bbk.activity.HomeActivity;
 import com.bbk.activity.R;
-import com.bbk.dialog.AlertDialog;
 import com.bbk.flow.DataFlow;
 import com.bbk.flow.ResultEvent;
 import com.bbk.util.UpdataDialog;
-import com.logg.Logg;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,6 +39,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+
+import me.logg.Logg;
 
 /**
  * 检测安装更新文件的助手类

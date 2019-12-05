@@ -31,7 +31,7 @@ import com.bbk.util.ImmersedStatusbarUtils;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.view.MyScrollViewNew;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import org.json.JSONException;
 import org.json.JSONObject;

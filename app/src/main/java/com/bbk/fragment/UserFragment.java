@@ -103,7 +103,7 @@ import com.bbk.view.MyScrollViewNew;
 import com.blog.www.guideview.Guide;
 import com.blog.www.guideview.GuideBuilder;
 import com.bumptech.glide.Glide;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;

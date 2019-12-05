@@ -1,6 +1,5 @@
 package com.bbk.activity;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.app.Notification;
@@ -9,27 +8,20 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Build;
-import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 import android.widget.Toast;
+
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
 import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
-import com.bbk.resource.NewConstants;
 import com.bbk.util.CrashHandler;
 import com.bbk.util.SharedPreferencesUtil;
-import com.bumptech.glide.Glide;
 import com.kepler.jd.Listener.AsyncInitListener;
 import com.kepler.jd.login.KeplerApiManager;
-import com.logg.Logg;
-import com.logg.config.LoggConfiguration;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
 import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
@@ -38,8 +30,6 @@ import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.tencent.android.tpush.XGIOperateCallback;
-import com.tencent.android.tpush.XGPushManager;
 import com.tencent.smtt.sdk.QbSdk;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.message.IUmengRegisterCallback;
@@ -50,15 +40,13 @@ import com.umeng.message.UmengMessageHandler;
 import com.umeng.message.UmengNotificationClickHandler;
 import com.umeng.message.entity.UMessage;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Locale;
 
-import static org.apache.http.client.methods.RequestBuilder.options;
+import me.logg.Logg;
+import me.logg.config.LoggConfiguration;
 
 
 public class MyApplication extends Application {

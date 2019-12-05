@@ -25,7 +25,7 @@ import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.util.TencentLoginUtil;
 import com.bbk.util.ValidatorUtil;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.tencent.android.tpush.XGIOperateCallback;
 import com.tencent.android.tpush.XGPushConfig;
 import com.tencent.android.tpush.XGPushManager;

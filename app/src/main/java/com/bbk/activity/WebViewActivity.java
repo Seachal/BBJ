@@ -20,7 +20,7 @@ import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.SoftHideKeyBoardUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.view.X5WebView;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.tamic.jswebview.view.NumberProgressBar;
 import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebViewClient;

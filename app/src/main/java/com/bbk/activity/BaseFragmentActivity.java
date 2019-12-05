@@ -49,7 +49,7 @@ import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KelperTask;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 

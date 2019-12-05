@@ -1,5 +1,5 @@
 package com.bbk.util;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import java.security.InvalidKeyException;
 import java.security.KeyFactory;

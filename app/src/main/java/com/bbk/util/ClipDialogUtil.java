@@ -32,7 +32,7 @@ import com.bbk.resource.NewConstants;
 import com.kepler.jd.Listener.OpenAppAction;
 import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

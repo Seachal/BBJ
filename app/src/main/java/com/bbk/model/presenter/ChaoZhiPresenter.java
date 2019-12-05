@@ -22,7 +22,7 @@ import com.bbk.shopcar.DianpuTypesActivity;
 import com.bbk.shopcar.view.View;
 import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.StringUtil;
-import com.logg.Logg;
+import me.logg.Logg;
 import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.List;

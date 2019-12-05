@@ -27,7 +27,7 @@ import com.bbk.util.StringUtil;
 import com.bbk.view.AdaptionSizeTextView;
 import com.bbk.view.MyScrollViewNew;
 import com.bumptech.glide.Glide;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import org.json.JSONException;
 import org.json.JSONObject;

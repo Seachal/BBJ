@@ -27,7 +27,7 @@ import com.bbk.flow.DataFlow;
 import com.bbk.resource.Constants;
 import com.bbk.wxpay.Util;
 import com.bumptech.glide.load.resource.bitmap.GlideBitmapDrawable;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.sina.weibo.sdk.api.TextObject;
 import com.sina.weibo.sdk.api.WeiboMultiMessage;
 import com.sina.weibo.sdk.api.share.IWeiboShareAPI;

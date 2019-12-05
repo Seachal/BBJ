@@ -13,7 +13,7 @@ import com.bbk.Bean.ConfrimOredetItemBean;
 import com.bbk.activity.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import java.util.List;
 

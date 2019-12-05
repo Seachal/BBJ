@@ -27,7 +27,7 @@ import com.bumptech.glide.Glide;
 import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
-import com.logg.Logg;
+import me.logg.Logg;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;

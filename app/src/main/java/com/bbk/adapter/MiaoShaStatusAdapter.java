@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.bbk.Bean.ChaozhigouTypesBean;
 import com.bbk.activity.R;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import java.util.List;
 

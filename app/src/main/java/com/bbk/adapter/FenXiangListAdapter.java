@@ -53,7 +53,7 @@ import com.blog.www.guideview.GuideBuilder;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.kepler.jd.login.KeplerApiManager;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

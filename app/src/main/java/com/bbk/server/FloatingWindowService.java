@@ -5,7 +5,7 @@ import org.json.JSONObject;
 import com.bbk.flow.ResultEvent;
 import com.bbk.resource.NewConstants;
 import com.bbk.util.SharedPreferencesUtil;
-import com.logg.Logg;
+import me.logg.Logg;
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.ClipboardManager;

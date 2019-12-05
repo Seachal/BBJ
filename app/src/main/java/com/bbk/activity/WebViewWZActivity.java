@@ -18,7 +18,7 @@ import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.SoftHideKeyBoardUtil;
 import com.bbk.view.MyWebView;
 import com.bbk.view.X5WebView;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.tamic.jswebview.view.NumberProgressBar;
 import com.tamic.jswebview.view.ProgressBarWebView;
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest;

@@ -90,26 +90,29 @@
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/new_app_icon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:hardwareAccelerated="true"
         android:largeHeap="true"
+        android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
 
-        //全面屏适配
-        <meta-data android:name="android.max_aspect"
-                   android:value="2.5" />
+        <!--        //全面屏适配-->
+        <!--        <meta-data android:name="android.max_aspect"-->
+        <!--                   android:value="2.5" />-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
         <!-- android:name=".CalligraphyApplication" -->
 
         <!--<provider-->
-            <!--android:name="android.support.v4.content.FileProvider"-->
-            <!--android:authorities="com.bbk.activity.fileProvider"-->
-            <!--android:exported="false"-->
-            <!--android:grantUriPermissions="true">-->
-            <!--<meta-data-->
-                <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
-                <!--android:resource="@xml/file_paths" />-->
+        <!--android:name="android.support.v4.content.FileProvider"-->
+        <!--android:authorities="com.bbk.activity.fileProvider"-->
+        <!--android:exported="false"-->
+        <!--android:grantUriPermissions="true">-->
+        <!--<meta-data-->
+        <!--android:name="android.support.FILE_PROVIDER_PATHS"-->
+        <!--android:resource="@xml/file_paths" />-->
         <!--</provider>-->
 
         <provider
@@ -177,8 +180,8 @@
             android:name=".WelcomeActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppLauncher"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppLauncher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -234,16 +237,18 @@
             android:name="com.kepler.jd.sdk.WebViewActivity"
             android:hardwareAccelerated="true"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize|stateHidden">
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
         <!-- ================================================================================================== -->
 
         <!-- 直接回呼 -->
-        <activity android:exported="true" android:name="com.kepler.jd.sdk.KeplerBackActivity" android:theme="@android:style/Theme.Translucent">
+        <activity
+            android:name="com.kepler.jd.sdk.KeplerBackActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="sdkback581b75d36bd0443cb50b68ae316c7e93"/>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="sdkback581b75d36bd0443cb50b68ae316c7e93" />
             </intent-filter>
         </activity>
 
@@ -328,8 +333,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".CoinGoGoGoActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QueryHistoryActivity"
             android:screenOrientation="portrait" />
@@ -457,8 +462,8 @@
         <activity
             android:name=".WebViewWZActivity"
             android:exported="true"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name=".GossipPiazzaDetailActivity"
             android:exported="true"
@@ -475,7 +480,7 @@
             android:name=".DataFragmentActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
-        //马甲登录
+<!--        //马甲登录-->
         <activity
             android:name=".UserSelfLoginNewActivity"
             android:exported="true"
@@ -672,134 +677,135 @@
             android:name="com.bbk.shopcar.ConfirmOrderZeroBuyActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
+
         <meta-data
             android:name="com.tencent.rdm.uuid"
             android:value="a2af72ec-a731-46eb-8501-0477e34702f3" />
 
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.SplashActivity"-->
-            <!--android:screenOrientation="portrait" />-->
+        <!--android:name="com.bbk.chat.ui.SplashActivity"-->
+        <!--android:screenOrientation="portrait" />-->
         <!--<activity android:name="com.bbk.chat.ui.HomeActivity" />-->
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.ChatActivity"-->
-            <!--android:launchMode="singleTask"-->
-            <!--android:screenOrientation="portrait"-->
-            <!--android:windowSoftInputMode="adjustResize" />-->
+        <!--android:name="com.bbk.chat.ui.ChatActivity"-->
+        <!--android:launchMode="singleTask"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:windowSoftInputMode="adjustResize" />-->
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.ChatNoActivity"-->
-            <!--android:launchMode="singleTask"-->
-            <!--android:screenOrientation="portrait"-->
-            <!--android:windowSoftInputMode="adjustResize" />-->
+        <!--android:name="com.bbk.chat.ui.ChatNoActivity"-->
+        <!--android:launchMode="singleTask"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:windowSoftInputMode="adjustResize" />-->
         <!--<activity android:name="com.bbk.chat.ui.SearchFriendActivity" />-->
         <!--<activity android:name="com.bbk.chat.ui.AddFriendActivity" />-->
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.ProfileActivity"-->
-            <!--android:launchMode="singleTask" />-->
+        <!--android:name="com.bbk.chat.ui.ProfileActivity"-->
+        <!--android:launchMode="singleTask" />-->
         <!--<activity android:name="com.bbk.chat.ui.ManageFriendGroupActivity" />-->
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.VideoActivity"-->
-            <!--android:screenOrientation="portrait" />-->
+        <!--android:name="com.bbk.chat.ui.VideoActivity"-->
+        <!--android:screenOrientation="portrait" />-->
         <!--<activity android:name="com.bbk.chat.ui.CreateGroupActivity" />-->
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.TCVideoRecordActivity"-->
-            <!--android:screenOrientation="portrait" />-->
+        <!--android:name="com.bbk.chat.ui.TCVideoRecordActivity"-->
+        <!--android:screenOrientation="portrait" />-->
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.TCVideoPreviewActivity"-->
-            <!--android:screenOrientation="portrait" />-->
+        <!--android:name="com.bbk.chat.ui.TCVideoPreviewActivity"-->
+        <!--android:screenOrientation="portrait" />-->
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.GroupProfileActivity"-->
-            <!--android:launchMode="singleTask" />-->
+        <!--android:name="com.bbk.chat.ui.GroupProfileActivity"-->
+        <!--android:launchMode="singleTask" />-->
         <!--萝卜丝bytedesk.com代码 开始-->
         <!--<activity-->
-            <!--android:name="com.bytedesk.ui.activity.ChatActivity"-->
-            <!--android:screenOrientation="portrait"/>-->
+        <!--android:name="com.bytedesk.ui.activity.ChatActivity"-->
+        <!--android:screenOrientation="portrait"/>-->
 
         <!--<service android:name="com.bytedesk.paho.android.service.MqttService"/>-->
         <!--&lt;!&ndash;./萝卜丝bytedesk.com代码 结束&ndash;&gt;-->
         <!--&lt;!&ndash; 消息收发service &ndash;&gt;-->
         <!--<service-->
-            <!--android:name="com.tencent.qalsdk.service.QalService"-->
-            <!--android:exported="false"-->
-            <!--android:process=":QALSERVICE" />-->
+        <!--android:name="com.tencent.qalsdk.service.QalService"-->
+        <!--android:exported="false"-->
+        <!--android:process=":QALSERVICE" />-->
         <!--<service-->
-            <!--android:name="com.tencent.qalsdk.service.QalAssistService"-->
-            <!--android:exported="false"-->
-            <!--android:process=":QALSERVICE" />-->
+        <!--android:name="com.tencent.qalsdk.service.QalAssistService"-->
+        <!--android:exported="false"-->
+        <!--android:process=":QALSERVICE" />-->
         <!--&lt;!&ndash; 离线消息广播接收器 &ndash;&gt;-->
         <!--<receiver-->
-            <!--android:name="com.tencent.qalsdk.QALBroadcastReceiver"-->
-            <!--android:exported="false">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.tencent.qalsdk.broadcast.qal" />-->
-            <!--</intent-filter>-->
+        <!--android:name="com.tencent.qalsdk.QALBroadcastReceiver"-->
+        <!--android:exported="false">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.tencent.qalsdk.broadcast.qal" />-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
         <!--&lt;!&ndash; 系统消息广播接收器 &ndash;&gt;-->
         <!--<receiver-->
-            <!--android:name="com.tencent.qalsdk.core.NetConnInfoCenter"-->
-            <!--android:process=":QALSERVICE">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.TIME_SET" />-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.TIMEZONE_CHANGED" />-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.tencent.qalsdk.service.TASK_REMOVED" />-->
-            <!--</intent-filter>-->
+        <!--android:name="com.tencent.qalsdk.core.NetConnInfoCenter"-->
+        <!--android:process=":QALSERVICE">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+        <!--</intent-filter>-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+        <!--</intent-filter>-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.TIME_SET" />-->
+        <!--</intent-filter>-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.TIMEZONE_CHANGED" />-->
+        <!--</intent-filter>-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.tencent.qalsdk.service.TASK_REMOVED" />-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
 
         <!--&lt;!&ndash; mipush &ndash;&gt;-->
         <!--<service-->
-            <!--android:name="com.xiaomi.push.service.XMJobService"-->
-            <!--android:enabled="true"-->
-            <!--android:exported="false"-->
-            <!--android:permission="android.permission.BIND_JOB_SERVICE"-->
-            <!--android:process=":MiPushService" />-->
+        <!--android:name="com.xiaomi.push.service.XMJobService"-->
+        <!--android:enabled="true"-->
+        <!--android:exported="false"-->
+        <!--android:permission="android.permission.BIND_JOB_SERVICE"-->
+        <!--android:process=":MiPushService" />-->
         <!--<service-->
-            <!--android:name="com.xiaomi.push.service.XMPushService"-->
-            <!--android:enabled="true"-->
-            <!--android:process=":MiPushService" />-->
+        <!--android:name="com.xiaomi.push.service.XMPushService"-->
+        <!--android:enabled="true"-->
+        <!--android:process=":MiPushService" />-->
         <!--<service-->
-            <!--android:name="com.xiaomi.mipush.sdk.PushMessageHandler"-->
-            <!--android:enabled="true"-->
-            <!--android:exported="true" />-->
+        <!--android:name="com.xiaomi.mipush.sdk.PushMessageHandler"-->
+        <!--android:enabled="true"-->
+        <!--android:exported="true" />-->
         <!--<service-->
-            <!--android:name="com.xiaomi.mipush.sdk.MessageHandleService"-->
-            <!--android:enabled="true" />-->
+        <!--android:name="com.xiaomi.mipush.sdk.MessageHandleService"-->
+        <!--android:enabled="true" />-->
 
         <!--<receiver-->
-            <!--android:name="com.bbk.chat.utils.MiPushMessageReceiver"-->
-            <!--android:exported="true">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.xiaomi.mipush.ERROR" />-->
-            <!--</intent-filter>-->
+        <!--android:name="com.bbk.chat.utils.MiPushMessageReceiver"-->
+        <!--android:exported="true">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE" />-->
+        <!--</intent-filter>-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED" />-->
+        <!--</intent-filter>-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.xiaomi.mipush.ERROR" />-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
         <!--<receiver-->
-            <!--android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"-->
-            <!--android:exported="true">-->
-            <!--<intent-filter>-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
+        <!--android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver"-->
+        <!--android:exported="true">-->
+        <!--<intent-filter>-->
+        <!--<category android:name="android.intent.category.DEFAULT" />-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
         <!--<receiver-->
-            <!--android:name="com.xiaomi.push.service.receivers.PingReceiver"-->
-            <!--android:exported="false"-->
-            <!--android:process=":MiPushService">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.xiaomi.push.PING_TIMER" />-->
-            <!--</intent-filter>-->
+        <!--android:name="com.xiaomi.push.service.receivers.PingReceiver"-->
+        <!--android:exported="false"-->
+        <!--android:process=":MiPushService">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.xiaomi.push.PING_TIMER" />-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
         <!-- mipush -->
 
@@ -809,59 +815,59 @@
 
         <!-- 第三方相关 :接收Push消息（注册、Push消息、Push连接状态、标签，LBS上报结果）广播 -->
         <!--<receiver android:name="com.bbk.chat.utils.HwPushMessageReceiver">-->
-            <!--<intent-filter>-->
+        <!--<intent-filter>-->
 
-                <!--&lt;!&ndash; 必须,用于接收token &ndash;&gt;-->
-                <!--<action android:name="com.huawei.android.push.intent.REGISTRATION" />-->
-                <!--&lt;!&ndash; 必须，用于接收消息 &ndash;&gt;-->
-                <!--<action android:name="com.huawei.android.push.intent.RECEIVE" />-->
-                <!--&lt;!&ndash; 可选，用于点击通知栏或通知栏上的按钮后触发onEvent回调 &ndash;&gt;-->
-                <!--<action android:name="com.huawei.android.push.intent.CLICK" />-->
-                <!--&lt;!&ndash; 可选，查看push通道是否连接，不查看则不需要 &ndash;&gt;-->
-                <!--<action android:name="com.huawei.intent.action.PUSH_STATE" />-->
-                <!--&lt;!&ndash; 可选，标签、地理位置上报回应，不上报则不需要 &ndash;&gt;-->
-                <!--<action android:name="com.huawei.android.push.plugin.RESPONSE" />-->
-            <!--</intent-filter>-->
+        <!--&lt;!&ndash; 必须,用于接收token &ndash;&gt;-->
+        <!--<action android:name="com.huawei.android.push.intent.REGISTRATION" />-->
+        <!--&lt;!&ndash; 必须，用于接收消息 &ndash;&gt;-->
+        <!--<action android:name="com.huawei.android.push.intent.RECEIVE" />-->
+        <!--&lt;!&ndash; 可选，用于点击通知栏或通知栏上的按钮后触发onEvent回调 &ndash;&gt;-->
+        <!--<action android:name="com.huawei.android.push.intent.CLICK" />-->
+        <!--&lt;!&ndash; 可选，查看push通道是否连接，不查看则不需要 &ndash;&gt;-->
+        <!--<action android:name="com.huawei.intent.action.PUSH_STATE" />-->
+        <!--&lt;!&ndash; 可选，标签、地理位置上报回应，不上报则不需要 &ndash;&gt;-->
+        <!--<action android:name="com.huawei.android.push.plugin.RESPONSE" />-->
+        <!--</intent-filter>-->
 
-            <!--<meta-data-->
-                <!--android:name="CS_cloud_ablitity"-->
-                <!--android:value="successRateAnalytics" />-->
+        <!--<meta-data-->
+        <!--android:name="CS_cloud_ablitity"-->
+        <!--android:value="successRateAnalytics" />-->
         <!--</receiver>-->
 
         <!--&lt;!&ndash;-->
-             <!--备注：Push相关的android组件需要添加到业务的AndroidManifest.xml,-->
-        	 <!--Push相关android组件运行在另外一个进程是为了防止Push服务异常而影响主业务-->
+        <!--备注：Push相关的android组件需要添加到业务的AndroidManifest.xml,-->
+        <!--Push相关android组件运行在另外一个进程是为了防止Push服务异常而影响主业务-->
         <!--&ndash;&gt;-->
 
 
         <!--&lt;!&ndash; PushSDK:PushSDK接收外部请求事件入口 &ndash;&gt;-->
         <!--<receiver-->
-            <!--android:name="com.huawei.android.pushagent.PushEventReceiver"-->
-            <!--android:process=":HwPushService">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.huawei.android.push.intent.REFRESH_PUSH_CHANNEL" />-->
-                <!--<action android:name="com.huawei.intent.action.PUSH" />-->
-                <!--<action android:name="com.huawei.intent.action.PUSH_ON" />-->
-                <!--<action android:name="com.huawei.android.push.PLUGIN" />-->
-            <!--</intent-filter>-->
+        <!--android:name="com.huawei.android.pushagent.PushEventReceiver"-->
+        <!--android:process=":HwPushService">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.huawei.android.push.intent.REFRESH_PUSH_CHANNEL" />-->
+        <!--<action android:name="com.huawei.intent.action.PUSH" />-->
+        <!--<action android:name="com.huawei.intent.action.PUSH_ON" />-->
+        <!--<action android:name="com.huawei.android.push.PLUGIN" />-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
         <!--<receiver-->
-            <!--android:name="com.huawei.android.pushagent.PushBootReceiver"-->
-            <!--android:process=":HwPushService">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.huawei.android.push.intent.REGISTER" />-->
-                <!--&lt;!&ndash; <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> &ndash;&gt;-->
-            <!--</intent-filter>-->
+        <!--android:name="com.huawei.android.pushagent.PushBootReceiver"-->
+        <!--android:process=":HwPushService">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="com.huawei.android.push.intent.REGISTER" />-->
+        <!--&lt;!&ndash; <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> &ndash;&gt;-->
+        <!--</intent-filter>-->
 
-            <!--<meta-data-->
-                <!--android:name="CS_cloud_version"-->
-                <!--android:value="\u0032\u0037\u0030\u0035" />-->
+        <!--<meta-data-->
+        <!--android:name="CS_cloud_version"-->
+        <!--android:value="\u0032\u0037\u0030\u0035" />-->
         <!--</receiver>-->
 
         <!--&lt;!&ndash; PushSDK:Push服务 &ndash;&gt;-->
         <!--<service-->
-            <!--android:name="com.huawei.android.pushagent.PushService"-->
-            <!--android:process=":HwPushService" />-->
+        <!--android:name="com.huawei.android.pushagent.PushService"-->
+        <!--android:process=":HwPushService" />-->
         <!-- hwpush -->
 
 
@@ -885,8 +891,8 @@
         <!--<activity android:name="com.bbk.chat.ui.ChooseFriendActivity" />-->
         <!--<activity android:name="com.bbk.chat.ui.GroupMemberActivity" />-->
         <!--<activity-->
-            <!--android:name="com.bbk.chat.ui.customview.DialogActivity"-->
-            <!--android:theme="@android:style/Theme.Dialog" />-->
+        <!--android:name="com.bbk.chat.ui.customview.DialogActivity"-->
+        <!--android:theme="@android:style/Theme.Dialog" />-->
         <!--<activity android:name="com.bbk.chat.ui.GroupMemberProfileActivity" />-->
         <!--<activity android:name="com.bbk.chat.ui.FriendshipHandleActivity" />-->
         <!--<activity android:name="com.bbk.chat.ui.AboutActivity" />-->
@@ -937,55 +943,55 @@
         </receiver>
         <!-- 【必须】 信鸽service -->
         <!--<service-->
-            <!--android:name="com.tencent.android.tpush.service.XGPushServiceV3"-->
-            <!--android:exported="true"-->
-            <!--android:persistent="true"-->
-            <!--android:process=":xg_service_v3" />-->
+        <!--android:name="com.tencent.android.tpush.service.XGPushServiceV3"-->
+        <!--android:exported="true"-->
+        <!--android:persistent="true"-->
+        <!--android:process=":xg_service_v3" />-->
 
         <!-- 【必须】 增强xg_service存活率 -->
         <!--<service-->
-            <!--android:name="com.tencent.android.tpush.service.XGDaemonService"-->
-            <!--android:process=":xg_service_v3" />-->
+        <!--android:name="com.tencent.android.tpush.service.XGDaemonService"-->
+        <!--android:process=":xg_service_v3" />-->
 
         <!-- 【可选】APP实现的Receiver，用于接收消息透传和操作结果的回调，请根据需要添加 -->
         <!-- YOUR_PACKAGE_PATH.CustomPushReceiver需要改为自己的Receiver： -->
         <!--<receiver-->
-            <!--android:name="com.bbk.receiver.MessageReceiver"-->
-            <!--android:exported="true">-->
-            <!--<intent-filter>-->
+        <!--android:name="com.bbk.receiver.MessageReceiver"-->
+        <!--android:exported="true">-->
+        <!--<intent-filter>-->
 
-                <!--&lt;!&ndash; 接收消息透传 &ndash;&gt;-->
-                <!--<action android:name="com.tencent.android.tpush.action.PUSH_MESSAGE" />-->
-                <!--&lt;!&ndash; 监听注册、反注册、设置/删除标签、通知被点击等处理结果 &ndash;&gt;-->
-                <!--<action android:name="com.tencent.android.tpush.action.FEEDBACK" />-->
-            <!--</intent-filter>-->
+        <!--&lt;!&ndash; 接收消息透传 &ndash;&gt;-->
+        <!--<action android:name="com.tencent.android.tpush.action.PUSH_MESSAGE" />-->
+        <!--&lt;!&ndash; 监听注册、反注册、设置/删除标签、通知被点击等处理结果 &ndash;&gt;-->
+        <!--<action android:name="com.tencent.android.tpush.action.FEEDBACK" />-->
+        <!--</intent-filter>-->
         <!--</receiver>-->
 
         <!-- 【必须】 【注意】authorities修改为 包名.AUTH_XGPUSH, 如demo的包名为：com.qq.xgdemo -->
         <!--<provider-->
-            <!--android:name="com.tencent.android.tpush.XGPushProvider"-->
-            <!--android:authorities="com.bbk.activity.AUTH_XGPUSH"-->
-            <!--android:exported="true" />-->
+        <!--android:name="com.tencent.android.tpush.XGPushProvider"-->
+        <!--android:authorities="com.bbk.activity.AUTH_XGPUSH"-->
+        <!--android:exported="true" />-->
 
         <!-- 【必须】 【注意】authorities修改为 包名.TPUSH_PROVIDER, 如demo的包名为：com.qq.xgdemo -->
         <!--<provider-->
-            <!--android:name="com.tencent.android.tpush.SettingsContentProvider"-->
-            <!--android:authorities="com.bbk.activity.TPUSH_PROVIDER"-->
-            <!--android:exported="false" />-->
+        <!--android:name="com.tencent.android.tpush.SettingsContentProvider"-->
+        <!--android:authorities="com.bbk.activity.TPUSH_PROVIDER"-->
+        <!--android:exported="false" />-->
 
         <!-- 【必须】 【注意】authorities修改为 包名.TENCENT.MID.V3, 如demo的包名为：com.qq.xgdemo -->
         <!--<provider-->
-            <!--android:name="com.tencent.mid.api.MidProvider"-->
-            <!--android:authorities="com.bbk.activity.TENCENT.MID.V3"-->
-            <!--android:exported="true" />-->
+        <!--android:name="com.tencent.mid.api.MidProvider"-->
+        <!--android:authorities="com.bbk.activity.TENCENT.MID.V3"-->
+        <!--android:exported="true" />-->
         <!-- 【必须】 请修改为APP的AccessId，“21”开头的10位数字，中间没空格 -->
         <!--<meta-data-->
-            <!--android:name="XG_V2_ACCESS_ID"-->
-            <!--android:value="2100196420" />-->
+        <!--android:name="XG_V2_ACCESS_ID"-->
+        <!--android:value="2100196420" />-->
         <!-- 【必须】 请修改为APP的AccessKey，“A”开头的12位字符串，中间没空格 -->
         <!--<meta-data-->
-            <!--android:name="XG_V2_ACCESS_KEY"-->
-            <!--android:value="AUTV25N58F3Z" />-->
+        <!--android:name="XG_V2_ACCESS_KEY"-->
+        <!--android:value="AUTV25N58F3Z" />-->
 
         <!-- 微博登录 -->
         <activity
@@ -1028,6 +1034,7 @@
             android:label="@string/title_activity_intent"
             android:screenOrientation="portrait"
             android:theme="@style/dialog2" />
+
         <receiver
             android:name="com.bbk.wxpay.AppRegister"
             android:permission="com.tencent.mm.plugin.permission.SEND">
@@ -1040,16 +1047,16 @@
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoDisplay"/>
+            android:theme="@android:style/Theme.NoDisplay" />
 
         <service android:name="com.bbk.server.FloatingWindowService" />
         <!-- 友盟 -->
         <!--<meta-data-->
-            <!--android:name="UMENG_APPKEY"-->
-            <!--android:value="59db08fcf29d985a31000021" />-->
+        <!--android:name="UMENG_APPKEY"-->
+        <!--android:value="59db08fcf29d985a31000021" />-->
         <!--<meta-data-->
-            <!--android:name="UMENG_CHANNEL"-->
-            <!--android:value="360" />-->
+        <!--android:name="UMENG_CHANNEL"-->
+        <!--android:value="360" />-->
 
         <activity android:name=".BidAcceptanceActivity" />
         <activity android:name=".BidDetailActivity" />

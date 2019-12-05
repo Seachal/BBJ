@@ -24,7 +24,7 @@ import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import org.json.JSONException;
 import org.json.JSONObject;

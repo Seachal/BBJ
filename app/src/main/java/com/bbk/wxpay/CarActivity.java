@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.alibaba.fastjson.JSON;
 import com.bbk.activity.BaseActivity;
 import com.bbk.activity.MyApplication;
@@ -33,19 +34,22 @@ import com.bbk.util.ImmersedStatusbarUtils;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.view.CommonLoadingView;
-import com.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+
 import org.json.JSONObject;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.logg.Logg;
 
 /**
  * 购物车

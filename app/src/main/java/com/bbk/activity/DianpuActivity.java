@@ -36,7 +36,7 @@ import com.bbk.view.CommonLoadingView;
 import com.bbk.view.MyScrollViewNew;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;

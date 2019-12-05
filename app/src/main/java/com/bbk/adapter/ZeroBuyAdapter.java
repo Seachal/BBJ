@@ -23,7 +23,7 @@ import com.bbk.util.StringUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import java.util.List;
 

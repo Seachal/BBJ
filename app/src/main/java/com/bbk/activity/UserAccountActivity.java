@@ -80,7 +80,7 @@ import com.bbk.util.TencentLoginUtil;
 import com.bbk.view.CircleImageView1;
 import com.bbk.view.CustomDatePicker;
 import com.bumptech.glide.Glide;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.tencent.android.tpush.XGIOperateCallback;
 import com.tencent.android.tpush.XGPushManager;
 import com.umeng.analytics.MobclickAgent;

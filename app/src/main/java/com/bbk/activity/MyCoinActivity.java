@@ -36,7 +36,7 @@ import com.bbk.util.BaseTools;
 import com.bbk.util.ImmersedStatusbarUtils;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.view.CircleImageView1;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;

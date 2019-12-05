@@ -28,7 +28,7 @@ import com.bbk.shopcar.entity.StoreInfo;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import org.json.JSONObject;
 

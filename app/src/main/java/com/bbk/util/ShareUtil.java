@@ -23,7 +23,7 @@ import com.bbk.activity.wxapi.WXEntryActivity;
 import com.bbk.client.BaseApiService;
 import com.bbk.flow.DataFlow;
 import com.bbk.resource.Constants;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.sina.weibo.sdk.api.TextObject;
 import com.sina.weibo.sdk.api.WeiboMultiMessage;
 import com.sina.weibo.sdk.api.share.IWeiboShareAPI;

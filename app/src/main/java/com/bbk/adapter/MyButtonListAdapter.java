@@ -17,7 +17,7 @@ import com.bbk.shopcar.adapter.ShopcatAdapter;
 import com.bbk.util.EventIdIntentUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import java.util.List;
 

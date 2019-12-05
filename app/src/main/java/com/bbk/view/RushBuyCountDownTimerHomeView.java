@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bbk.activity.R;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;

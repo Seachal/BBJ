@@ -1,1 +1,6 @@
-include ':app', ':guideview', ':jdlmm', ':toprightmenu', ':jdsdk_lib', ':bytedesk-ui', ':flowlayout-lib', ':library', ':kssdklibrary'
+include ':app',
+        ':guideview',
+        ':jdlmm', ':toprightmenu',
+        ':jdsdk_lib', ':bytedesk-ui',
+        ':flowlayout-lib', ':library',
+        ':kssdklibrary',':Log'

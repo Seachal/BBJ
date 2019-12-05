@@ -21,7 +21,7 @@ import com.bbk.util.ShareUtil;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.view.MyWebView;
 import com.bbk.view.X5WebView;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.tamic.jswebview.browse.JsWeb.CustomWebChromeClient;
 import com.tamic.jswebview.browse.JsWeb.CustomWebViewClient;
 import com.tamic.jswebview.view.ProgressBarWebView;

@@ -68,7 +68,7 @@ import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KelperTask;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

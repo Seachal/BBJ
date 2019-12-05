@@ -46,7 +46,7 @@ import com.bbk.util.ImmersedStatusbarUtils;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.util.TencentLoginUtil;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;

@@ -11,22 +11,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
-import com.bbk.Bean.BrokerageDetailBean;
 import com.bbk.Bean.BrokerageDetailInfoBean;
 import com.bbk.activity.BaseFragmentActivity;
 import com.bbk.activity.MyApplication;
 import com.bbk.activity.R;
-import com.bbk.adapter.BrokerageDetailAdapter;
 import com.bbk.client.BaseObserver;
 import com.bbk.client.ExceptionHandle;
 import com.bbk.client.RetrofitClient;
 import com.bbk.model.tablayout.XTabLayout;
-import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.HomeLoadUtil;
 import com.bbk.util.ImmersedStatusbarUtils;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
-import com.logg.Logg;
 
 import org.json.JSONObject;
 

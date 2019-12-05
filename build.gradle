@@ -6,8 +6,8 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
-        classpath 'com.novoda:bintray-release:0.5.0'
+        classpath 'com.android.tools.build:gradle:3.4.2'
+//        classpath 'com.novoda:bintray-release:0.5.0'
         classpath 'com.google.gms:google-services:3.0.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -37,16 +37,16 @@ task clean(type: Delete) {
 //添加此处 解决rootProject.ext.compileSdkVersion 不存在的问题
 //ext {
 //    compileSdkVersion = 26
-//    buildToolsVersion = "26.0.2"
+//    buildToolsVersion = "28.0.3"
 //    minSdkVersion = 15
 //    targetSdkVersion = 21
 //}
 ext {
     // Sdk and tools
-    minSdkVersion = 16
+    minSdkVersion = 21
     targetSdkVersion = 21
     compileSdkVersion = 26
-    buildToolsVersion = '26.0.2'
+    buildToolsVersion = '28.0.3'
     supportLibVersion = '27.0.1'
 
     archLifecycleVersion = "1.1.1"

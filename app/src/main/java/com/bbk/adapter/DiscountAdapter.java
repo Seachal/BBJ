@@ -19,7 +19,7 @@ import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.view.AdaptionSizeTextView;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import org.json.JSONObject;
 

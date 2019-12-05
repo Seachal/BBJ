@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+
+// Start 以下这段功能是用来上传至代码库，其他项目不用复制这段代码
+//apply plugin: 'com.novoda.bintray-release'
+
+def libraryVersionCode = 12
+def libraryVersionName = '1.6.0'
+
+//publish {
+//    userOrg = 'chinarocky'// 这是代码仓库的账号
+//    groupId = 'me.tool'// 包名
+//    artifactId = 'Logg'// 项目名
+//    publishVersion = libraryVersionName// 版本号
+//    desc = 'Android Log'
+//    website = 'https://github.com/RockyQu/'
+//}
+// End 以上这段功能是用来上传至代码库
+
+android {
+
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode libraryVersionCode
+        versionName libraryVersionName
+    }
+
+    // 移除lint检查的error，可以避免由于编译条件太过严格而编译不过的问题
+    lintOptions {
+        // InvalidPackage: Package not included in Android
+        disable 'InvalidPackage'
+        // Expected resource of type color [ResourceType] 资源类型错误
+        disable "ResourceType"
+        // 忽略因MissingTranslation导致Build Failed错误 "app_name" is not translated in "zh" (Chinese)
+        disable 'MissingTranslation'
+
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+    dexOptions {
+        preDexLibraries = false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+}

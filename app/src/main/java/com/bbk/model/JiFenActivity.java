@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.alibaba.fastjson.JSON;
 import com.bbk.Bean.JiFenBean;
 import com.bbk.Bean.JiFenJlistBean;
@@ -33,20 +34,25 @@ import com.bbk.util.ImmersedStatusbarUtils;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.view.CommonLoadingView;
-import com.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.zaaach.toprightmenu.JifenTopMenu;
-import com.zaaach.toprightmenu.MenuItem;;
+import com.zaaach.toprightmenu.MenuItem;
+
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.logg.Logg;
+
+;
 
 /**
  * 积分明细

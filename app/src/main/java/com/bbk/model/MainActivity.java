@@ -79,7 +79,7 @@ import com.bbk.util.UpdataDialog;
 import com.bbk.view.CommonLoadingView;
 import com.bbk.view.RushBuyCountDownTimerHomeView;
 import com.bumptech.glide.Glide;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.scwang.smartrefresh.header.BezierCircleHeader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;

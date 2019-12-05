@@ -53,7 +53,7 @@ import com.bbk.view.NumImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.gson.Gson;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.sina.weibo.sdk.api.share.BaseResponse;
 import com.sina.weibo.sdk.api.share.IWeiboHandler.Response;
 import com.sina.weibo.sdk.api.share.IWeiboShareAPI;

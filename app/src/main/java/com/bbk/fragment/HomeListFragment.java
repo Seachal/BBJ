@@ -19,7 +19,7 @@ import com.bbk.client.RetrofitClient;
 import com.bbk.resource.NewConstants;
 import com.bbk.util.DialogHomeUtil;
 import com.bbk.util.StringUtil;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;

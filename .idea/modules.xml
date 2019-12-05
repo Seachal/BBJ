@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BBJ.iml" filepath="$PROJECT_DIR$/BBJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Log/Log.iml" filepath="$PROJECT_DIR$/Log/Log.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bibijing.iml" filepath="$PROJECT_DIR$/bibijing.iml" />
       <module fileurl="file://$PROJECT_DIR$/bytedesk-ui/bytedesk-ui.iml" filepath="$PROJECT_DIR$/bytedesk-ui/bytedesk-ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/flowlayout-lib/flowlayout-lib.iml" filepath="$PROJECT_DIR$/flowlayout-lib/flowlayout-lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/guideview/guideview.iml" filepath="$PROJECT_DIR$/guideview/guideview.iml" />

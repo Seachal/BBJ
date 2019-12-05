@@ -15,7 +15,7 @@ import com.bbk.client.BaseApiService;
 import com.bbk.resource.Constants;
 import com.bbk.resource.NewConstants;
 import com.bbk.wxpay.Util;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;

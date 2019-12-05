@@ -28,7 +28,7 @@ import com.bbk.shopcar.view.View;
 import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

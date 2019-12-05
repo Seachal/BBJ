@@ -43,7 +43,7 @@ import com.bbk.util.UpdataDialog;
 import com.bumptech.glide.Glide;
 import com.hhl.library.FlowTagLayout;
 import com.hhl.library.OnTagSelectListener;
-import com.logg.Logg;
+import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;

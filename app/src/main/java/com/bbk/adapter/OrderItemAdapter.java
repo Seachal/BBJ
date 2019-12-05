@@ -22,7 +22,7 @@ import com.bbk.shopcar.TuiKuanDeatailActivity;
 import com.bbk.util.HomeLoadUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
-import com.logg.Logg;
+import me.logg.Logg;
 
 import java.util.ArrayList;
 import java.util.List;
