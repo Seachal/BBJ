@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.bbk.activity"
-    android:versionCode="35"
-    android:versionName="4.2.7">
+   >
+<!--    android:versionCode="35"-->
+<!--    android:versionName="4.2.7"-->
     <!--&lt;!&ndash; 聊天界面拍照发送图片 &ndash;&gt;-->
     <!--<uses-permission android:name="android.permission.CAMERA" />-->
     <!--&lt;!&ndash; 登录接口：检测/监听网络状态 &ndash;&gt;-->
