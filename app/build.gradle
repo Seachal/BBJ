@@ -211,5 +211,9 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:' + rootProject.supportLibVersion
     implementation 'com.android.support:cardview-v7:'+ rootProject.supportLibVersion
     testImplementation 'junit:junit:4.12'
+    //    okhttp 拦截器， 打印 request、response
+    implementation('com.github.ihsanbal:LoggingInterceptor:3.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
 }
 

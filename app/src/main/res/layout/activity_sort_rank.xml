@@ -30,7 +30,7 @@
 			android:scaleType="centerCrop"
 			android:src="@mipmap/goback_btn"
 			android:visibility="gone"/>
-//    android:textColor="#2D2D2D"
+<!--//    android:textColor="#2D2D2D"-->
         <TextView
             android:id="@+id/topbar_title"
             android:layout_width="wrap_content"

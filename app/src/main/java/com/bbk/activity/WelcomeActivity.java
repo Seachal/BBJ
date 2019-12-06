@@ -1,11 +1,5 @@
 package com.bbk.activity;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -41,7 +35,6 @@ import com.bbk.entity.XGMessageEntity;
 import com.bbk.resource.Constants;
 import com.bbk.resource.NewConstants;
 import com.bbk.server.FloatingWindowService;
-import com.bbk.util.EventIdIntentUtil;
 import com.bbk.util.SchemeIntentUtil;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
@@ -51,12 +44,14 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.google.gson.Gson;
-import com.tencent.android.tpush.XGIOperateCallback;
 import com.tencent.android.tpush.XGPushClickedResult;
-import com.tencent.android.tpush.XGPushConfig;
 import com.tencent.android.tpush.XGPushManager;
 
-import static com.bbk.model.MainActivity.consultService;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class WelcomeActivity extends BaseActivity2{
@@ -72,6 +67,7 @@ public class WelcomeActivity extends BaseActivity2{
 	//倒计时
 	@SuppressLint("HandlerLeak")
 	private Handler handler2 = new Handler(){
+		@Override
 		public void handleMessage(Message msg) {
 			if (WelcomeActivity.this.isFinishing() || null == this) {
 				return;
