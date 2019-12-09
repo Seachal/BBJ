@@ -368,9 +368,11 @@
                     android:layout_marginLeft="10dp"
                     android:src="@mipmap/enter01" />
             </LinearLayout>
+
             <include
                 android:id="@+id/tuiguang_user"
-                layout="@layout/tuiguang_user_layout"/>
+                layout="@layout/tuiguang_user_layout" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="8dp"

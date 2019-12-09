@@ -2,8 +2,6 @@ package com.bbk.activity;
 
 
 import android.app.Activity;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -16,7 +14,6 @@ import android.os.Message;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -39,12 +36,9 @@ import com.bbk.fragment.SortFragment;
 import com.bbk.fragment.UserFragment;
 import com.bbk.model.MainActivity;
 import com.bbk.resource.Constants;
-import com.bbk.resource.NewConstants;
 import com.bbk.update.UpdateVersionService;
 import com.bbk.util.BaseTools;
-import com.bbk.util.DialogHomeUtil;
 import com.bbk.util.DialogSingleUtil;
-import com.bbk.util.HomeLoadUtil;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.view.CustomViewPager;
@@ -53,14 +47,12 @@ import com.bbk.view.NumImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.gson.Gson;
-import me.logg.Logg;
 import com.sina.weibo.sdk.api.share.BaseResponse;
 import com.sina.weibo.sdk.api.share.IWeiboHandler.Response;
 import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
 import com.sina.weibo.sdk.api.share.WeiboShareSDK;
 import com.sina.weibo.sdk.constant.WBConstants;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -74,6 +66,7 @@ import java.util.TimerTask;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.logg.Logg;
 
 import static com.ali.auth.third.core.context.KernelContext.context;
 

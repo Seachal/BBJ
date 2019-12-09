@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -21,7 +20,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.baichuan.android.trade.AlibcTrade;
 import com.alibaba.baichuan.android.trade.model.AlibcShowParams;
@@ -34,36 +32,30 @@ import com.bbk.Bean.DemoTradeCallback;
 import com.bbk.client.BaseObserver;
 import com.bbk.client.ExceptionHandle;
 import com.bbk.client.RetrofitClient;
-import com.bbk.fragment.NewHomeFragment;
 import com.bbk.resource.NewConstants;
 import com.bbk.shopcar.Utils.ShopDialog;
 import com.bbk.util.ClipDialogUtil;
-import com.bbk.util.DensityUtils;
 import com.bbk.util.DialogCheckYouhuiUtil;
 import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.EventIdIntentUtil;
-import com.bbk.util.SchemeIntentUtil;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.util.UpdataDialog;
-import com.bumptech.glide.Glide;
 import com.kepler.jd.Listener.OpenAppAction;
 import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KelperTask;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
-import me.logg.Logg;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.reactivestreams.Subscription;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import io.reactivex.schedulers.Schedulers;
+import me.logg.Logg;
 
 public class BaseActivity extends Activity {
     private ClipDialogUtil clipDialogUtil;
@@ -102,7 +94,9 @@ public class BaseActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+//        sca:百度移动统计
         StatService.onResume(this);
+//        sca:友盟统计
         MobclickAgent.onResume(this);
     }
 
@@ -115,6 +109,7 @@ public class BaseActivity extends Activity {
                     public void onNext(String s) {
                         try {
                             JSONObject jsonObject = new JSONObject(s);
+//                            sca: https://my.oschina.net/deepSprings/blog/729834
                             if (jsonObject.optString("status").equals("1")) {
                                 String content = jsonObject.optString("content");
                                 JSONObject json = new JSONObject(content);
@@ -244,7 +239,7 @@ public class BaseActivity extends Activity {
                 public void onClick(View v) {
                     String userID = SharedPreferencesUtil.getSharedData(MyApplication.getApplication(), "userInfor", "userID");
                     if (TextUtils.isEmpty(userID)) {
-                        JumpDetailActivty.Flag = "home";
+                        JumpDetailActivity.Flag = "home";
                         Intent intent = new Intent(context, UserLoginNewActivity.class);
                         startActivityForResult(intent, 1);
                     } else {
@@ -372,6 +367,7 @@ public class BaseActivity extends Activity {
         exParams.put("isv_code", "appisvcode");
         exParams.put("alibaba", "阿里巴巴");//自定义参数部分，可任意增删改
         if (url.contains("tmall") || url.contains("taobao")) {
+//           sca:打开 阿里系 app
             showUrl(url);
         } else if (url.contains("jd")) {
             try {
@@ -382,6 +378,7 @@ public class BaseActivity extends Activity {
                 e.printStackTrace();
             };
         } else {
+//          sca:其他商城商品 使用 webview 打开
             Intent intent = new Intent(BaseActivity.this, WebViewActivity.class);
             if (url != null) {
                 intent.putExtra("url", url);

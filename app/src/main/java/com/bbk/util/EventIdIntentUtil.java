@@ -1,8 +1,14 @@
 package com.bbk.util;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.alibaba.baichuan.android.trade.AlibcTrade;
 import com.alibaba.baichuan.android.trade.model.AlibcShowParams;
@@ -17,23 +23,19 @@ import com.bbk.activity.CollectionActivity;
 import com.bbk.activity.CouponActivity;
 import com.bbk.activity.DataFragmentActivity;
 import com.bbk.activity.DetailsMainActivity22;
-import com.bbk.activity.DianpuActivity;
 import com.bbk.activity.FanLiOrderActivity;
 import com.bbk.activity.FenXiangActivty;
 import com.bbk.activity.FensiActivity;
 import com.bbk.activity.HomeActivity;
 import com.bbk.activity.IntentActivity;
-import com.bbk.activity.JumpDetailActivty;
 import com.bbk.activity.MyApplication;
 import com.bbk.activity.MyCoinActivity;
 import com.bbk.activity.NewRankActivty;
 import com.bbk.activity.QueryHistoryActivity;
 import com.bbk.activity.R;
 import com.bbk.activity.RankCategoryActivity;
-import com.bbk.activity.ResultMainActivity;
 import com.bbk.activity.SearchMainActivity;
 import com.bbk.activity.ShopDetailActivty;
-import com.bbk.activity.TuiguangDialogActivity;
 import com.bbk.activity.UserLoginNewActivity;
 import com.bbk.activity.UserShenSuActivity;
 import com.bbk.activity.WebViewActivity;
@@ -41,22 +43,18 @@ import com.bbk.activity.WebViewActivity111;
 import com.bbk.activity.WebViewActivity_copy;
 import com.bbk.activity.WebViewRechargeActivity;
 import com.bbk.activity.WebViewWZActivity;
-import com.bbk.activity.WebViewXGActivity;
 import com.bbk.activity.WelcomeActivity;
 import com.bbk.activity.YaoqingFriendsActivity;
 import com.bbk.client.BaseApiService;
 import com.bbk.client.BaseObserver;
 import com.bbk.client.ExceptionHandle;
 import com.bbk.client.RetrofitClient;
-import com.bbk.dialog.AlertDialog;
 import com.bbk.model.ChaoZhiGouTypesActivity;
 import com.bbk.model.DianpuSearchActivity;
-import com.bbk.model.JiFenActivity;
 import com.bbk.model.ShopFenleiActivity;
 import com.bbk.model.ZiYingZeroBuyShopActivity;
 import com.bbk.resource.NewConstants;
 import com.bbk.shopcar.CarActivity;
-import com.bbk.shopcar.DianpuHomeActivity;
 import com.bbk.shopcar.DianpuTypesActivity;
 import com.bbk.shopcar.NewDianpuActivity;
 import com.bbk.shopcar.NewDianpuHomeActivity;
@@ -68,27 +66,16 @@ import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KelperTask;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
-import me.logg.Logg;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Handler;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.bbk.util.ClipDialogUtil.url;
+import me.logg.Logg;
 
 public class EventIdIntentUtil {
     private static AlibcShowParams alibcShowParams;//页面打开方式，默认，H5，Native

@@ -166,6 +166,7 @@ public class BrokerageDetailActivity extends BaseActivity implements CommonLoadi
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

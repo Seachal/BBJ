@@ -1,6 +1,5 @@
 package com.bbk.activity;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,9 +20,7 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.ContextMenu;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -47,14 +44,12 @@ import android.widget.Toast;
 import com.bbk.flow.DataFlow;
 import com.bbk.flow.ResultEvent;
 import com.bbk.fragment.DataFragment;
-import com.bbk.fragment.UserFragment;
 import com.bbk.resource.Constants;
 import com.bbk.resource.NewConstants;
 import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.DialogUtil;
 import com.bbk.util.HttpUtil;
 import com.bbk.util.ImmersedStatusbarUtils;
-import com.bbk.util.MD5Util;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.util.TencentLoginUtil;
@@ -68,9 +63,6 @@ import com.sina.weibo.sdk.net.RequestListener;
 import com.sina.weibo.sdk.openapi.UsersAPI;
 import com.sina.weibo.sdk.openapi.models.ErrorInfo;
 import com.sina.weibo.sdk.openapi.models.User;
-import com.tencent.android.tpush.XGIOperateCallback;
-import com.tencent.android.tpush.XGPushConfig;
-import com.tencent.android.tpush.XGPushManager;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
@@ -402,7 +394,7 @@ public class UserLoginNewActivity extends BaseActivity implements OnClickListene
 										+ "&userid=" + jsonObject.optString("u_id"));
 								startActivity(Intent);
 							}
-							if (JumpDetailActivty.Flag.equals("home")) {
+							if (JumpDetailActivity.Flag.equals("home")) {
 								NewConstants.yingdaoFlag = "1";
 								intent = new Intent(this, HomeActivity.class);
 								intent.putExtra("type", "4");
@@ -512,7 +504,7 @@ public class UserLoginNewActivity extends BaseActivity implements OnClickListene
 												"&userid="+inforJsonObj.optString("u_id"));
 										startActivity(Intent);
 									}
-									if (JumpDetailActivty.Flag.equals("home")) {
+									if (JumpDetailActivity.Flag.equals("home")) {
 										intent = new Intent(this, HomeActivity.class);
 										intent.putExtra("type", "4");
 										if (DataFragmentActivity.login_remind != null) {
@@ -602,8 +594,8 @@ public class UserLoginNewActivity extends BaseActivity implements OnClickListene
 				intent = new Intent(this, HomeActivity.class);
 				setResult(1,intent);
 				finish();
-			}else if (JumpDetailActivty.Flag.equals("home")) {
-				intent = new Intent(this, JumpDetailActivty.class);
+			}else if (JumpDetailActivity.Flag.equals("home")) {
+				intent = new Intent(this, JumpDetailActivity.class);
 				setResult(1,intent);
 				finish();
 			}else {

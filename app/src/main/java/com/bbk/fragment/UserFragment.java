@@ -26,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ali.auth.third.login.callback.LogoutCallback;
 import com.alibaba.baichuan.android.trade.AlibcTrade;
@@ -37,7 +36,6 @@ import com.alibaba.baichuan.android.trade.model.OpenType;
 import com.alibaba.baichuan.android.trade.page.AlibcBasePage;
 import com.alibaba.baichuan.android.trade.page.AlibcMyCartsPage;
 import com.alibaba.fastjson.JSON;
-import com.andview.refreshview.callback.IFooterCallBack;
 import com.bbk.Bean.ButtonListBean;
 import com.bbk.Bean.DemoTradeCallback;
 import com.bbk.Bean.NewUserBean;
@@ -54,7 +52,7 @@ import com.bbk.activity.ContactActivity;
 import com.bbk.activity.FanLiOrderActivity;
 import com.bbk.activity.FensiActivity;
 import com.bbk.activity.HomeActivity;
-import com.bbk.activity.JumpDetailActivty;
+import com.bbk.activity.JumpDetailActivity;
 import com.bbk.activity.LogisticsQueryActivity;
 import com.bbk.activity.MesageCenterActivity;
 import com.bbk.activity.MyApplication;
@@ -92,7 +90,6 @@ import com.bbk.shopcar.ShopOrderActivity;
 import com.bbk.util.BaseTools;
 import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.EventIdIntentUtil;
-import com.bbk.util.HomeLoadUtil;
 import com.bbk.util.HongbaoDialog;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
@@ -103,13 +100,11 @@ import com.bbk.view.MyScrollViewNew;
 import com.blog.www.guideview.Guide;
 import com.blog.www.guideview.GuideBuilder;
 import com.bumptech.glide.Glide;
-import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -126,9 +121,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.logg.Logg;
 
 
 public class UserFragment extends BaseViewPagerFragment implements OnClickListener, MyButtonListAdapter.userInterface {
@@ -896,7 +893,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
 //                        if (TextUtils.isEmpty(isFirstResultUse)) {
 //                            isFirstResultUse = "yes";
 //                        }
-//                        if (isFirstResultUse.equals("yes") && NewConstants.yingdaoFlag.equals("1") && JumpDetailActivty.Flag.equals("home")) {
+//                        if (isFirstResultUse.equals("yes") && NewConstants.yingdaoFlag.equals("1") && JumpDetailActivity.Flag.equals("home")) {
 //                            showGuideViewHehuoren(llBrokerage, llFanliOrder);
 //                        }
 //                    }
@@ -985,7 +982,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
         switch (v.getId()) {
             case R.id.ll_tuiguang_user:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1000,7 +997,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.mjingbi:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1012,7 +1009,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.mcollection:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1022,7 +1019,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.mfoot:
 //                if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
 //                    intent = new Intent(getActivity(), UserLoginNewActivity.class);
 //                    startActivityForResult(intent, 1);
 //                } else {
@@ -1048,7 +1045,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
 //                break;
             case R.id.morderlist:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1062,7 +1059,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.mycomment:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1073,7 +1070,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.newpinglun:
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "19";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -1085,7 +1082,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.mygossip:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1095,7 +1092,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.mfeedback:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1109,7 +1106,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.user_img:
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "17";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -1120,7 +1117,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.user_name:
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "18";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -1146,7 +1143,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                     }
                 } else {
                     StringUtil.showToast(getActivity(), "请先登录！");
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivity(intent);
                 }
@@ -1155,7 +1152,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
             //我的发镖
             case R.id.ll_my_fabiao:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1166,7 +1163,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
             //我的劫镖
             case R.id.ll_my_jiebiao:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1546,7 +1543,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.mjdshopcart:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1558,7 +1555,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.mTaobaoshopcart:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1573,7 +1570,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_sign:
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "13";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -1584,7 +1581,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_jingbi:
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "14";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -1596,7 +1593,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_fensi:
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "15";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -1607,7 +1604,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_yaoqing:
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "16";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -1618,7 +1615,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_all_order:
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "12";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -1647,7 +1644,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 LogFlag = "20";
                 mShopOrder(userID, "5");
 //                if (TextUtils.isEmpty(userID)) {
-////                    JumpDetailActivty.Flag = "home";
+////                    JumpDetailActivity.Flag = "home";
 //                    LogFlag = "11";
 //                    intent = new Intent(getActivity(), UserLoginNewActivity.class);
 //                    startActivityForResult(intent, 1);
@@ -1658,7 +1655,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_car:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1668,7 +1665,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_foot:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1678,7 +1675,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_pl:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1689,7 +1686,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_address:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1705,7 +1702,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_yjfk:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1715,7 +1712,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_woyao:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1725,7 +1722,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case R.id.ll_pudao:
                 if (TextUtils.isEmpty(userID)) {
-                    JumpDetailActivty.Flag = "home";
+                    JumpDetailActivity.Flag = "home";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
@@ -1755,7 +1752,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
     private void mShopOrder(String userid, String value) {
         Intent intent;
         if (TextUtils.isEmpty(userid)) {
-//            JumpDetailActivty.Flag = "home";
+//            JumpDetailActivity.Flag = "home";
             intent = new Intent(getActivity(), UserLoginNewActivity.class);
             startActivityForResult(intent, 1);
         } else {
@@ -2075,7 +2072,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
         switch (name) {
             case "购物车":
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "2";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -2086,7 +2083,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case "足迹":
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "6";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -2097,7 +2094,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case "我的评论":
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "5";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -2110,7 +2107,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
             case "收货地址":
                 NewConstants.address = "1";
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "4";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
@@ -2122,7 +2119,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
             case "会员特权":
                 //推广规则跳转链接
 //                if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
 //                    intent = new Intent(getActivity(), UserLoginNewActivity.class);
 //                    startActivityForResult(intent, 1);
 //                } else {
@@ -2134,7 +2131,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case "新手必看":
 //                if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
 //                    intent = new Intent(getActivity(), UserLoginNewActivity.class);
 //                    startActivityForResult(intent, 1);
 //                } else {
@@ -2146,7 +2143,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
             case "常见问题":
                 //常见问题跳转链接
 //                if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
 //                    intent = new Intent(getActivity(), UserLoginNewActivity.class);
 //                    startActivityForResult(intent, 1);
 //                } else {
@@ -2159,7 +2156,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case "意见反馈":
 //                if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
 //                    intent = new Intent(getActivity(), UserLoginNewActivity.class);
 //                    startActivityForResult(intent, 1);
 //                } else {
@@ -2169,7 +2166,7 @@ public class UserFragment extends BaseViewPagerFragment implements OnClickListen
                 break;
             case "我要的":
                 if (TextUtils.isEmpty(userID)) {
-//                    JumpDetailActivty.Flag = "home";
+//                    JumpDetailActivity.Flag = "home";
                     LogFlag = "3";
                     intent = new Intent(getActivity(), UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);

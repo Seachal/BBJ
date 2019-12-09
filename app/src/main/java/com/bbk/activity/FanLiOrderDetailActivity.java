@@ -210,6 +210,7 @@ public class FanLiOrderDetailActivity extends BaseActivity {
 //                });
 //    }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

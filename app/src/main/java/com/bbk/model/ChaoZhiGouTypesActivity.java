@@ -445,6 +445,7 @@ public class ChaoZhiGouTypesActivity extends BaseActivity implements CommonLoadi
 
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         DialogSingleUtil.dismiss(0);

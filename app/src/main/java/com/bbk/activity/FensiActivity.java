@@ -592,6 +592,7 @@ public class FensiActivity extends BaseActivity implements CommonLoadingView.Loa
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

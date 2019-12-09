@@ -1,13 +1,10 @@
 package com.bbk.activity;
 
-import android.app.Activity;
-import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -18,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.baichuan.android.trade.AlibcTrade;
 import com.alibaba.baichuan.android.trade.model.AlibcShowParams;
@@ -31,19 +27,15 @@ import com.bbk.Bean.DemoTradeCallback;
 import com.bbk.client.BaseObserver;
 import com.bbk.client.ExceptionHandle;
 import com.bbk.client.RetrofitClient;
-import com.bbk.fragment.NewHomeFragment;
 import com.bbk.model.MainActivity;
 import com.bbk.resource.NewConstants;
 import com.bbk.util.ClipDialogUtil;
-import com.bbk.util.DensityUtils;
 import com.bbk.util.DialogCheckYouhuiUtil;
 import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.EventIdIntentUtil;
-import com.bbk.util.SchemeIntentUtil;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.util.UpdataDialog;
-import com.bumptech.glide.Glide;
 import com.kepler.jd.Listener.OpenAppAction;
 import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KelperTask;
@@ -356,7 +348,7 @@ public class BaseFragmentActivity extends FragmentActivity {
 				public void onClick(View v) {
 					String userID = SharedPreferencesUtil.getSharedData(MyApplication.getApplication(), "userInfor", "userID");
 					if (TextUtils.isEmpty(userID)) {
-						JumpDetailActivty.Flag = "home";
+						JumpDetailActivity.Flag = "home";
 						Intent intent = new Intent(context, UserLoginNewActivity.class);
 						startActivityForResult(intent, 1);
 					} else {

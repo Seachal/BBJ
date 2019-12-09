@@ -259,6 +259,7 @@ public class DianpuSearchActivity extends BaseActivity implements CommonLoadingV
         mPtrframe.finishLoadMore();
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         DialogSingleUtil.dismiss(0);

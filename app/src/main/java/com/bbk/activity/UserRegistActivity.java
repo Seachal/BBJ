@@ -136,7 +136,8 @@ public class UserRegistActivity extends BaseActivity implements ResultEvent,Text
 		layoutParams.height = result;
 		data_head.setLayoutParams(layoutParams);
 	}
-	protected void onPause() {  
+	@Override
+    protected void onPause() {
         super.onPause();  
         // 注销ConentObserver  
         getContentResolver().unregisterContentObserver(mObserver);  

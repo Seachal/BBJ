@@ -175,6 +175,7 @@ public class TiXianDetailActivity extends BaseActivity implements CommonLoadingV
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

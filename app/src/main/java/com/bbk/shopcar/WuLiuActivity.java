@@ -15,7 +15,6 @@ import com.bbk.Bean.NewHomeCzgBean;
 import com.bbk.Bean.WuliuBean;
 import com.bbk.Bean.WuliuItemBean;
 import com.bbk.activity.BaseActivity;
-import com.bbk.activity.JumpDetailActivty;
 import com.bbk.activity.MyApplication;
 import com.bbk.activity.R;
 import com.bbk.adapter.NewCzgGridAdapter;

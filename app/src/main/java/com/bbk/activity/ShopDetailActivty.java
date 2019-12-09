@@ -940,6 +940,7 @@ public class ShopDetailActivty extends BaseActivity {
      *
      * @param context
      */
+    @Override
     public void showBaozhangeDialog(final Context context) {
         if (shopDialog == null || !shopDialog.isShowing()) {
             //初始化弹窗 布局 点击事件的id

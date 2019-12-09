@@ -199,6 +199,7 @@ public class ZeroBuyShopActivity extends BaseActivity implements CommonLoadingVi
         mPtrframe.finishLoadMore();
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         DialogSingleUtil.dismiss(0);

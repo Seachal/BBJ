@@ -161,6 +161,7 @@ public class ShesuRecordActivity extends BaseActivity implements CommonLoadingVi
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

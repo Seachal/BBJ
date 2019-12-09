@@ -1,9 +1,17 @@
 package com.bbk.activity;
 
-import java.util.HashMap;
-import java.util.Map;
-import org.json.JSONException;
-import org.json.JSONObject;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
 import com.alibaba.baichuan.android.trade.AlibcTrade;
 import com.alibaba.baichuan.android.trade.model.AlibcShowParams;
 import com.alibaba.baichuan.android.trade.model.OpenType;
@@ -27,18 +35,14 @@ import com.bumptech.glide.Glide;
 import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import me.logg.Logg;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 public class IntentActivity extends BaseActivity {
 
@@ -192,7 +196,7 @@ public class IntentActivity extends BaseActivity {
 									isintent = false;
 									if (jumpBean.getJumpThirdPage() != null && jumpBean.getJumpThirdPage().equals("1")) {
 										DialogSingleUtil.dismiss(0);
-										Intent intent = new Intent(IntentActivity.this, JumpDetailActivty.class);
+										Intent intent = new Intent(IntentActivity.this, JumpDetailActivity.class);
 										intent.putExtra("content", content);
 										intent.putExtra("isczg", isczg);
 										intent.putExtra("tljid",tljid);
@@ -271,7 +275,8 @@ public class IntentActivity extends BaseActivity {
 	/**
 	 * 打开指定链接
 	 */
-	public void showUrl(String url) {
+	@Override
+    public void showUrl(String url) {
 		String text = url;
 		if(TextUtils.isEmpty(text)) {
 			StringUtil.showToast(this, "URL为空");

@@ -1,11 +1,7 @@
 package com.bbk.util;
 
 import android.content.Context;
-import android.content.Intent;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.bbk.activity.BidHomeActivity;
 import com.bbk.activity.MyApplication;
 //import com.tencent.imsdk.TIMCallBack;
 //import com.tencent.imsdk.TIMManager;
@@ -14,6 +10,7 @@ import com.bbk.activity.MyApplication;
 
 /**
  * Created by rtj on 2018/3/21.
+ * sca:腾讯 tim, 及时通讯
  */
 
 public class TencentLoginUtil {

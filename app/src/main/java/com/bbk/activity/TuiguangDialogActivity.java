@@ -129,6 +129,7 @@ public class TuiguangDialogActivity extends BaseActivity {
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

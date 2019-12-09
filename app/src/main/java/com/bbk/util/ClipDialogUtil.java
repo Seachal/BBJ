@@ -1,50 +1,28 @@
 package com.bbk.util;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.alibaba.baichuan.android.trade.AlibcTrade;
 import com.alibaba.baichuan.android.trade.model.AlibcShowParams;
 import com.alibaba.baichuan.android.trade.model.OpenType;
 import com.alibaba.baichuan.android.trade.page.AlibcPage;
-import com.alibaba.fastjson.JSON;
 import com.bbk.Bean.DemoTradeCallback;
-import com.bbk.Bean.ShareBean;
 import com.bbk.activity.IntentActivity;
-import com.bbk.activity.JumpDetailActivty;
-import com.bbk.activity.MyApplication;
-import com.bbk.activity.MyGossipActivity;
-import com.bbk.activity.QueryHistoryActivity;
 import com.bbk.activity.R;
-import com.bbk.activity.SearchMainActivity;
 import com.bbk.activity.WebViewActivity;
-import com.bbk.client.BaseApiService;
-import com.bbk.dialog.AlertDialog;
-import com.bbk.resource.Constants;
 import com.bbk.resource.NewConstants;
-import com.kepler.jd.Listener.OpenAppAction;
-import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import me.logg.Logg;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
-import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 

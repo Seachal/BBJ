@@ -9,18 +9,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.os.MessageQueue.IdleHandler;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Toast;
 
 import com.baidu.mobstat.StatService;
-import com.bbk.util.ClipDialogUtil;
-import com.bbk.util.SchemeIntentUtil;
-import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.util.TencentLoginUtil;
 import com.umeng.analytics.MobclickAgent;
@@ -69,6 +64,10 @@ public class BaseActivity2 extends Activity {
 	}
 
 
+	/**
+	 * sca：监测应用是否联网
+	 * @return
+	 */
 	private boolean connectivities() {
 		ConnectivityManager cm = (ConnectivityManager) this
 				.getSystemService(Context.CONNECTIVITY_SERVICE);

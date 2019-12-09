@@ -167,6 +167,7 @@ public class ShopFenleiActivity extends BaseActivity implements CommonLoadingVie
         mPtrframe.finishLoadMore();
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         DialogSingleUtil.dismiss(0);

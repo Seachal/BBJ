@@ -236,6 +236,7 @@ public class BrokerageActivity extends BaseActivity {
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

@@ -236,6 +236,7 @@ public class DianpuTypesActivity extends BaseActivity implements CommonLoadingVi
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

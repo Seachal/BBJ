@@ -511,7 +511,7 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".JumpDetailActivty"
+            android:name=".JumpDetailActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
 

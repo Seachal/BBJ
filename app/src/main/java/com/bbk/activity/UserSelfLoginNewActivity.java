@@ -15,10 +15,7 @@ import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -33,7 +30,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bbk.flow.DataFlow;
 import com.bbk.flow.ResultEvent;
@@ -56,9 +52,6 @@ import com.sina.weibo.sdk.net.RequestListener;
 import com.sina.weibo.sdk.openapi.UsersAPI;
 import com.sina.weibo.sdk.openapi.models.ErrorInfo;
 import com.sina.weibo.sdk.openapi.models.User;
-import com.tencent.android.tpush.XGIOperateCallback;
-import com.tencent.android.tpush.XGPushConfig;
-import com.tencent.android.tpush.XGPushManager;
 import com.tencent.connect.UserInfo;
 import com.tencent.connect.auth.QQToken;
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
@@ -354,7 +347,7 @@ public class UserSelfLoginNewActivity extends BaseActivity implements OnClickLis
 										+"&userid="+inforJsonObj.optString("u_id"));
 								startActivity(Intent);
 							}
-							if (JumpDetailActivty.Flag.equals("home")) {
+							if (JumpDetailActivity.Flag.equals("home")) {
 								NewConstants.yingdaoFlag = "1";
 								intent = new Intent(this, HomeActivity.class);
 								intent.putExtra("type", "4");
@@ -509,8 +502,8 @@ public class UserSelfLoginNewActivity extends BaseActivity implements OnClickLis
 				intent = new Intent(this, HomeActivity.class);
 				setResult(1,intent);
 				finish();
-			} else if (JumpDetailActivty.Flag.equals("home")) {
-				intent = new Intent(this, JumpDetailActivty.class);
+			} else if (JumpDetailActivity.Flag.equals("home")) {
+				intent = new Intent(this, JumpDetailActivity.class);
 				setResult(1,intent);
 			}else {
 				finish();

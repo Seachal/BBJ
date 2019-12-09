@@ -1,6 +1,5 @@
 package com.bbk.shopcar;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -43,14 +42,12 @@ import com.bbk.activity.MyApplication;
 import com.bbk.activity.R;
 import com.bbk.activity.ShopDetailActivty;
 import com.bbk.adapter.TaoBaoAdapter;
-import com.bbk.client.BaseApiService;
 import com.bbk.client.BaseObserver;
 import com.bbk.client.ExceptionHandle;
 import com.bbk.client.RetrofitClient;
 import com.bbk.dialog.HomeAlertDialog;
 import com.bbk.flow.DataFlowTaobao;
 import com.bbk.flow.ResultEvent;
-import com.bbk.fragment.CarFrament;
 import com.bbk.model.tablayout.XTabLayout;
 import com.bbk.resource.NewConstants;
 import com.bbk.shopcar.Utils.UtilsLog;
@@ -66,7 +63,6 @@ import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.view.AdaptionSizeTextView;
 import com.bbk.view.CommonLoadingView;
-import com.bbk.view.X5CarWebView;
 import com.kepler.jd.Listener.ActionCallBck;
 import com.kepler.jd.Listener.LoginListener;
 import com.kepler.jd.Listener.OpenAppAction;
@@ -74,7 +70,6 @@ import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KelperTask;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
-import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
@@ -97,6 +92,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import me.logg.Logg;
 
 
 /**
@@ -960,6 +956,7 @@ public class CarActivity extends BaseActivity implements View.OnClickListener, S
     /**
      * 打开指定链接
      */
+    @Override
     public void showUrl(String url) {
         Handler handler = new Handler();
         alibcShowParams = new AlibcShowParams(OpenType.Native, false);

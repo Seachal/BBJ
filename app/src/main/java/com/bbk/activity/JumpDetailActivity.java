@@ -37,10 +37,8 @@ import com.bbk.adapter.NewCzgGridAdapter;
 import com.bbk.client.BaseObserver;
 import com.bbk.client.ExceptionHandle;
 import com.bbk.client.RetrofitClient;
-import com.bbk.resource.NewConstants;
 import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.GlideImageGuanggaoLoader;
-import com.bbk.util.HomeLoadUtil;
 import com.bbk.util.ImmersedStatusbarUtils;
 import com.bbk.util.NoFastClickUtils;
 import com.bbk.util.RSAEncryptorAndroid;
@@ -55,7 +53,6 @@ import com.bumptech.glide.Priority;
 import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
-import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
@@ -72,9 +69,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -82,12 +77,13 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.logg.Logg;
 
 /**
  * Created by Administrator on 2018/6/06/006.
  */
 
-public class JumpDetailActivty extends BaseActivity {
+public class JumpDetailActivity extends BaseActivity {
     @BindView(R.id.banner)
     Banner banner;
     @BindView(R.id.tv_title)
@@ -305,7 +301,7 @@ public class JumpDetailActivty extends BaseActivity {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
-                        showJbDiscountDialog(JumpDetailActivty.this);
+                        showJbDiscountDialog(JumpDetailActivity.this);
                     }
                 }
             });
@@ -356,8 +352,8 @@ public class JumpDetailActivty extends BaseActivity {
                                 czgBeans = JSON.parseArray(content, NewHomeCzgBean.class);
                                 //禁用滑动事件
                                 guessLikeList.setNestedScrollingEnabled(false);
-                                guessLikeList.setLayoutManager(new GridLayoutManager(JumpDetailActivty.this, 2));
-                                guessLikeList.setAdapter(new NewCzgGridAdapter(JumpDetailActivty.this, czgBeans));
+                                guessLikeList.setLayoutManager(new GridLayoutManager(JumpDetailActivity.this, 2));
+                                guessLikeList.setAdapter(new NewCzgGridAdapter(JumpDetailActivity.this, czgBeans));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -374,14 +370,14 @@ public class JumpDetailActivty extends BaseActivity {
 
                     @Override
                     protected void showDialog() {
-                        DialogSingleUtil.show(JumpDetailActivty.this);
+                        DialogSingleUtil.show(JumpDetailActivity.this);
                     }
 
                     @Override
                     public void onError(ExceptionHandle.ResponeThrowable e) {
                         DialogSingleUtil.dismiss(0);
                         refresh.finishRefresh();
-                        StringUtil.showToast(JumpDetailActivty.this, e.message);
+                        StringUtil.showToast(JumpDetailActivity.this, e.message);
                     }
                 });
     }
@@ -465,17 +461,17 @@ public class JumpDetailActivty extends BaseActivity {
                         exParams.put("alibaba", "阿里巴巴");//自定义参数部分，可任意增删改
                         if (domain != null) {
                             if (domain.equals("tmall") || domain.equals("taobao")) {
-                                showLoadingDialog(JumpDetailActivty.this);
+                                showLoadingDialog(JumpDetailActivity.this);
                                 showUrl(url);
                             } else if (domain.equals("jd")) {
-                                showLoadingDialog(JumpDetailActivty.this);
+                                showLoadingDialog(JumpDetailActivity.this);
                                 mHandler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
                                         if (cancleJump) {
                                             updataDialog.dismiss();
                                             try {
-                                                KeplerApiManager.getWebViewService().openJDUrlPage(url, mKeplerAttachParameter, JumpDetailActivty.this, mOpenAppAction, 1500);
+                                                KeplerApiManager.getWebViewService().openJDUrlPage(url, mKeplerAttachParameter, JumpDetailActivity.this, mOpenAppAction, 1500);
                                             } catch (KeplerBufferOverflowException e) {
                                                 e.printStackTrace();
                                             } catch (JSONException e) {
@@ -485,7 +481,7 @@ public class JumpDetailActivty extends BaseActivity {
                                     }
                                 }, 2000);
                             } else {
-                                intent = new Intent(JumpDetailActivty.this, WebViewActivity.class);
+                                intent = new Intent(JumpDetailActivity.this, WebViewActivity.class);
                                 if (url != null) {
                                     intent.putExtra("url", url);
                                 }
@@ -504,7 +500,7 @@ public class JumpDetailActivty extends BaseActivity {
                     intent = new Intent(this, UserLoginNewActivity.class);
                     startActivityForResult(intent, 1);
                 } else {
-                    showZeroBuyDiscountDialog(JumpDetailActivty.this);
+                    showZeroBuyDiscountDialog(JumpDetailActivity.this);
                 }
                 break;
         }
@@ -513,6 +509,7 @@ public class JumpDetailActivty extends BaseActivity {
     /**
      * 打开指定链接
      */
+    @Override
     public void showUrl(String url) {
         final String text = url;
         if (TextUtils.isEmpty(text)) {
@@ -525,7 +522,7 @@ public class JumpDetailActivty extends BaseActivity {
                 if (cancleJump) {
                     updataDialog.dismiss();
                     DialogSingleUtil.dismiss(0);
-                    AlibcTrade.show(JumpDetailActivty.this, new AlibcPage(text), alibcShowParams, null, exParams, new DemoTradeCallback());
+                    AlibcTrade.show(JumpDetailActivity.this, new AlibcPage(text), alibcShowParams, null, exParams, new DemoTradeCallback());
                 }
             }
         }, 2000);
@@ -562,7 +559,7 @@ public class JumpDetailActivty extends BaseActivity {
 
                     @Override
                     protected void showDialog() {
-                        DialogSingleUtil.show(JumpDetailActivty.this);
+                        DialogSingleUtil.show(JumpDetailActivity.this);
                     }
 
                     @Override
@@ -570,7 +567,7 @@ public class JumpDetailActivty extends BaseActivity {
                         llShare.setClickable(true);
                         llLingquan.setClickable(true);
                         DialogSingleUtil.dismiss(0);
-                        StringUtil.showToast(JumpDetailActivty.this, e.message);
+                        StringUtil.showToast(JumpDetailActivity.this, e.message);
                     }
                 });
     }
@@ -614,7 +611,7 @@ public class JumpDetailActivty extends BaseActivity {
                                     urltaobaoOrjd = jsonObject1.optString("url");
                                 }
                                 if (flag.equals("lingquan")) {
-                                    DialogSingleUtil.show(JumpDetailActivty.this);
+                                    DialogSingleUtil.show(JumpDetailActivity.this);
                                     alibcShowParams = new AlibcShowParams(OpenType.Native, false);
                                     alibcShowParams.setClientType("taobao_scheme");
                                     exParams = new HashMap<>();
@@ -626,7 +623,7 @@ public class JumpDetailActivty extends BaseActivity {
                                         } else if (domain.equals("jd")) {
                                             DialogSingleUtil.dismiss(100);
                                         } else {
-                                            intent = new Intent(JumpDetailActivty.this, WebViewActivity.class);
+                                            intent = new Intent(JumpDetailActivity.this, WebViewActivity.class);
                                             if (urltaobaoOrjd != null) {
                                                 intent.putExtra("url", urltaobaoOrjd);
                                             }
@@ -749,7 +746,7 @@ public class JumpDetailActivty extends BaseActivity {
 
                     @Override
                     protected void showDialog() {
-                        DialogSingleUtil.show(JumpDetailActivty.this);
+                        DialogSingleUtil.show(JumpDetailActivity.this);
                     }
 
                     @Override
@@ -811,7 +808,7 @@ public class JumpDetailActivty extends BaseActivity {
 
     private void shareOrjump() {
         if (flag.equals("lingquan")) {
-            DialogSingleUtil.show(JumpDetailActivty.this);
+            DialogSingleUtil.show(JumpDetailActivity.this);
             alibcShowParams = new AlibcShowParams(OpenType.Native, false);
             alibcShowParams.setClientType("taobao_scheme");
             exParams = new HashMap<>();
@@ -819,17 +816,17 @@ public class JumpDetailActivty extends BaseActivity {
             exParams.put("alibaba", "阿里巴巴");//自定义参数部分，可任意增删改
             if (domain != null) {
                 if (domain.equals("tmall") || domain.equals("taobao")) {
-                    showLoadingDialog(JumpDetailActivty.this);
+                    showLoadingDialog(JumpDetailActivity.this);
                     showUrl(url);
                 } else if (domain.equals("jd")) {
-                    showLoadingDialog(JumpDetailActivty.this);
+                    showLoadingDialog(JumpDetailActivity.this);
                     mHandler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             if (cancleJump) {
                                 updataDialog.dismiss();
                                 try {
-                                    KeplerApiManager.getWebViewService().openJDUrlPage(url, mKeplerAttachParameter, JumpDetailActivty.this, mOpenAppAction, 1500);
+                                    KeplerApiManager.getWebViewService().openJDUrlPage(url, mKeplerAttachParameter, JumpDetailActivity.this, mOpenAppAction, 1500);
                                 } catch (KeplerBufferOverflowException e) {
                                     e.printStackTrace();
                                 } catch (JSONException e) {
@@ -839,7 +836,7 @@ public class JumpDetailActivty extends BaseActivity {
                         }
                     }, 2000);
                 } else {
-                    Intent intent = new Intent(JumpDetailActivty.this, WebViewActivity.class);
+                    Intent intent = new Intent(JumpDetailActivity.this, WebViewActivity.class);
                     if (url != null) {
                         intent.putExtra("url", url);
                     }
@@ -853,13 +850,13 @@ public class JumpDetailActivty extends BaseActivity {
         } else if (flag.equals("share")) {
             ShareBean shareBean = JSON.parseObject(content, ShareBean.class);
             if (shareBean.getImgUrl() != null) {
-                Glide.with(JumpDetailActivty.this).load(shareBean.getImgUrl()).priority(Priority.HIGH).into(imageFenxiang);
+                Glide.with(JumpDetailActivity.this).load(shareBean.getImgUrl()).priority(Priority.HIGH).into(imageFenxiang);
             }
             String wenan = "";
             if (shareBean.getWenan() != null) {
                 wenan = shareBean.getWenan().replace("|", "\n");
             }
-            ClipboardManager cm = (ClipboardManager) JumpDetailActivty.this.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipboardManager cm = (ClipboardManager) JumpDetailActivity.this.getSystemService(Context.CLIPBOARD_SERVICE);
             cm.setText(wenan);
             returnBitMap(shareBean, wenan, shareBean.getImgUrl());
         }
@@ -900,7 +897,7 @@ public class JumpDetailActivty extends BaseActivity {
                             DialogSingleUtil.dismiss(0);
                             List<String> DetailimgUrlList = new ArrayList<>();
                             DetailimgUrlList.add(shareBean.getImgUrl());
-                            ShareJumpUtil.showShareDialog(llShare, JumpDetailActivty.this
+                            ShareJumpUtil.showShareDialog(llShare, JumpDetailActivity.this
                                     , shareBean.getTitle(),
                                     ""
                                     , shareBean.getShareUrl()
@@ -953,7 +950,7 @@ public class JumpDetailActivty extends BaseActivity {
                             List<String> DetailimgUrlList = new ArrayList<>();
                             DetailimgUrlList.add(shareBean.getImgUrl());
                             ShareZeroBuyUtil.showShareDialog(llShare,
-                                    JumpDetailActivty.this
+                                    JumpDetailActivity.this
                                     , shareBean.getTitle(), ""
                                     , shareBean.getShareUrl(), shareBean.getImgUrl(), ""
                                     , imageFenxiang, wenan, bitmap,DetailimgUrlList);
@@ -970,7 +967,7 @@ public class JumpDetailActivty extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        if (JumpDetailActivty.this != null && JumpDetailActivty.this.isFinishing()) {
+        if (JumpDetailActivity.this != null && JumpDetailActivity.this.isFinishing()) {
             DialogSingleUtil.dismiss(0);
         }
         super.onDestroy();
@@ -1015,7 +1012,7 @@ public class JumpDetailActivty extends BaseActivity {
                                     case "3":
                                         String userID = SharedPreferencesUtil.getSharedData(MyApplication.getApplication(), "userInfor", "userID");
                                         if (!TextUtils.isEmpty(userID)) {
-                                            showZeroBuyDiscountDialog(JumpDetailActivty.this);
+                                            showZeroBuyDiscountDialog(JumpDetailActivity.this);
                                         }
                                         break;
                                     case "1":
@@ -1032,17 +1029,17 @@ public class JumpDetailActivty extends BaseActivity {
                                         exParams.put("alibaba", "阿里巴巴");//自定义参数部分，可任意增删改
                                         if (domain != null) {
                                             if (domain.equals("tmall") || domain.equals("taobao")) {
-                                                showLoadingDialog(JumpDetailActivty.this);
+                                                showLoadingDialog(JumpDetailActivity.this);
                                                 showUrl(url);
                                             } else if (domain.equals("jd")) {
-                                                showLoadingDialog(JumpDetailActivty.this);
+                                                showLoadingDialog(JumpDetailActivity.this);
                                                 mHandler.postDelayed(new Runnable() {
                                                     @Override
                                                     public void run() {
                                                         if (cancleJump) {
                                                             updataDialog.dismiss();
                                                             try {
-                                                                KeplerApiManager.getWebViewService().openJDUrlPage(url, mKeplerAttachParameter, JumpDetailActivty.this, mOpenAppAction, 1500);
+                                                                KeplerApiManager.getWebViewService().openJDUrlPage(url, mKeplerAttachParameter, JumpDetailActivity.this, mOpenAppAction, 1500);
                                                             } catch (KeplerBufferOverflowException e) {
                                                                 e.printStackTrace();
                                                             } catch (JSONException e) {
@@ -1052,7 +1049,7 @@ public class JumpDetailActivty extends BaseActivity {
                                                     }
                                                 }, 2000);
                                             } else {
-                                                Intent intent = new Intent(JumpDetailActivty.this, WebViewActivity.class);
+                                                Intent intent = new Intent(JumpDetailActivity.this, WebViewActivity.class);
                                                 if (url != null) {
                                                     intent.putExtra("url", url);
                                                 }
@@ -1065,7 +1062,7 @@ public class JumpDetailActivty extends BaseActivity {
                                         break;
                                 }
                             } else {
-                                StringUtil.showToast(JumpDetailActivty.this, jsonObject.optString("errmsg"));
+                                StringUtil.showToast(JumpDetailActivity.this, jsonObject.optString("errmsg"));
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -1079,13 +1076,13 @@ public class JumpDetailActivty extends BaseActivity {
 
                     @Override
                     protected void showDialog() {
-                        DialogSingleUtil.show(JumpDetailActivty.this);
+                        DialogSingleUtil.show(JumpDetailActivity.this);
                     }
 
                     @Override
                     public void onError(ExceptionHandle.ResponeThrowable e) {
 //						DialogSingleUtil.dismiss(0);
-                        StringUtil.showToast(JumpDetailActivty.this, e.message);
+                        StringUtil.showToast(JumpDetailActivity.this, e.message);
                     }
                 });
     }
@@ -1143,7 +1140,7 @@ public class JumpDetailActivty extends BaseActivity {
                             if (!AlibcLogin.getInstance().isLogin()) {
                                 DialogSingleUtil.show(context);
                                 final AlibcLogin alibcLogin = AlibcLogin.getInstance();
-                                alibcLogin.showLogin(JumpDetailActivty.this, new AlibcLoginCallback() {
+                                alibcLogin.showLogin(JumpDetailActivity.this, new AlibcLoginCallback() {
                                     @Override
                                     public void onSuccess() {
                                         DialogSingleUtil.dismiss(0);
@@ -1212,18 +1209,18 @@ public class JumpDetailActivty extends BaseActivity {
                                 content = jsonObject.optString("content");
                                 ShareBean shareBean = JSON.parseObject(content, ShareBean.class);
                                 if (shareBean.getImgUrl() != null) {
-                                    Glide.with(JumpDetailActivty.this).load(shareBean.getImgUrl()).priority(Priority.HIGH).into(imageFenxiang);
+                                    Glide.with(JumpDetailActivity.this).load(shareBean.getImgUrl()).priority(Priority.HIGH).into(imageFenxiang);
                                 }
                                 String wenan = "";
                                 if (shareBean.getWenan() != null) {
                                     wenan = shareBean.getWenan().replace("|", "\n");
                                 }
-                                ClipboardManager cm = (ClipboardManager) JumpDetailActivty.this.getSystemService(Context.CLIPBOARD_SERVICE);
+                                ClipboardManager cm = (ClipboardManager) JumpDetailActivity.this.getSystemService(Context.CLIPBOARD_SERVICE);
                                 cm.setText(wenan);
                                 returnZeroBuyBitMap(shareBean, wenan, shareBean.getImgUrl());
                             }else {
                                 DialogSingleUtil.dismiss(0);
-                                StringUtil.showToast(JumpDetailActivty.this,jsonObject.optString("errmsg"));
+                                StringUtil.showToast(JumpDetailActivity.this,jsonObject.optString("errmsg"));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -1237,13 +1234,13 @@ public class JumpDetailActivty extends BaseActivity {
 
                     @Override
                     protected void showDialog() {
-                        DialogSingleUtil.show(JumpDetailActivty.this);
+                        DialogSingleUtil.show(JumpDetailActivity.this);
                     }
 
                     @Override
                     public void onError(ExceptionHandle.ResponeThrowable e) {
                         DialogSingleUtil.dismiss(0);
-                        StringUtil.showToast(JumpDetailActivty.this, e.message);
+                        StringUtil.showToast(JumpDetailActivity.this, e.message);
                     }
                 });
     }
@@ -1293,7 +1290,7 @@ public class JumpDetailActivty extends BaseActivity {
 
                     @Override
                     protected void showDialog() {
-                        DialogSingleUtil.show(JumpDetailActivty.this);
+                        DialogSingleUtil.show(JumpDetailActivity.this);
                     }
 
                     @Override

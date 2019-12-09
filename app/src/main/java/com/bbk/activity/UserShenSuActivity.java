@@ -217,6 +217,7 @@ public class UserShenSuActivity extends BaseActivity implements CommonLoadingVie
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }

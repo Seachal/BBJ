@@ -356,6 +356,7 @@ public class JiFenActivity extends BaseActivity implements CommonLoadingView.Loa
                 });
     }
 
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }
