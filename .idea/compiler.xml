@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="BBJ.app" target="1.7" />
+      <module name="BBJ.bytedesk-ui" target="1.7" />
+      <module name="BBJ.flowlayout-lib" target="1.7" />
+      <module name="BBJ.guideview" target="1.7" />
+      <module name="BBJ.jdlmm" target="1.6" />
+      <module name="BBJ.jdsdk_lib" target="1.6" />
+      <module name="BBJ.kssdklibrary" target="1.7" />
+      <module name="BBJ.library" target="1.7" />
+      <module name="BBJ.Log" target="1.7" />
+      <module name="BBJ.toprightmenu" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
