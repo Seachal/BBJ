@@ -3,11 +3,9 @@ package com.bbk.client;
 import java.util.Map;
 
 import io.reactivex.Observable;
-import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
-import retrofit2.http.QueryMap;
 
 
 public interface BaseApiService<T> {
@@ -269,7 +267,7 @@ public interface BaseApiService<T> {
     Observable<String> doShoppingCart(@FieldMap Map<String, String> map);
 
     //根据id查购物车内容
-    @POST("mallService/queryShoppingCartByUserid")
+    @POST("appsafe/queryShoppingCartByUserid")
     @FormUrlEncoded
     Observable<String> queryShoppingCartByUserid(@FieldMap Map<String, String> map);
 
@@ -279,7 +277,7 @@ public interface BaseApiService<T> {
     Observable<String> queryProductListByKeyword(@FieldMap Map<String, String> map);
 
     //三级页面详情
-    @POST("mallService/queryProductDetailById")
+    @POST("appsafe/queryProductDetailById")
     @FormUrlEncoded
     Observable<String> queryProductDetailById(@FieldMap Map<String, String> map);
 

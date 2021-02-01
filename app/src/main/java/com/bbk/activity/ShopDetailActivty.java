@@ -31,7 +31,6 @@ import com.alibaba.fastjson.JSON;
 import com.bbk.Bean.CanshuBean;
 import com.bbk.Bean.DiscountBean;
 import com.bbk.Bean.PlBean;
-import com.bbk.Bean.ShareBean;
 import com.bbk.Bean.ShopDetailBean;
 import com.bbk.Bean.ShopTuijianBean;
 import com.bbk.Bean.TypesChooseBean;
@@ -62,7 +61,6 @@ import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.GlideImageGuanggaoLoader;
 import com.bbk.util.HomeLoadUtil;
 import com.bbk.util.ImmersedStatusbarUtils;
-import com.bbk.util.ShareJumpUtil;
 import com.bbk.util.ShareShopDetailUtil;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
@@ -72,7 +70,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
 import com.hhl.library.FlowTagLayout;
 import com.hhl.library.OnTagSelectListener;
-import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
@@ -97,6 +94,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.logg.Logg;
 
 /**
  * Created by Administrator on 2018/6/06/006.

@@ -50,12 +50,9 @@ import com.bbk.client.ExceptionHandle;
 import com.bbk.client.RetrofitClient;
 import com.bbk.dialog.HomeAlertDialog;
 import com.bbk.flow.DataFlowTaobao;
-import com.bbk.flow.ResultEvent;
 import com.bbk.model.tablayout.XTabLayout;
 import com.bbk.resource.NewConstants;
-import com.bbk.shopcar.CarActivity;
 import com.bbk.shopcar.ConfirmOrderActivity;
-import com.bbk.shopcar.ConfirmOrderZeroBuyActivity;
 import com.bbk.shopcar.NewDianpuActivity;
 import com.bbk.shopcar.SwipeExpandableListView;
 import com.bbk.shopcar.Utils.UtilsLog;
@@ -63,17 +60,14 @@ import com.bbk.shopcar.adapter.ShopcatAdapter;
 import com.bbk.shopcar.entity.GoodsInfo;
 import com.bbk.shopcar.entity.GoodsInfo1;
 import com.bbk.shopcar.entity.StoreInfo;
-import com.bbk.util.CheckYouhuiAlertDialog;
 import com.bbk.util.DialogCheckYouhuiUtil;
 import com.bbk.util.DialogSingleUtil;
 import com.bbk.util.EventIdIntentUtil;
-import com.bbk.util.HtmlService;
 import com.bbk.util.ImmersedStatusbarUtils;
 import com.bbk.util.SharedPreferencesUtil;
 import com.bbk.util.StringUtil;
 import com.bbk.view.AdaptionSizeTextView;
 import com.bbk.view.CommonLoadingView;
-import com.bbk.view.X5CarWebView;
 import com.kepler.jd.Listener.ActionCallBck;
 import com.kepler.jd.Listener.LoginListener;
 import com.kepler.jd.Listener.OpenAppAction;
@@ -81,18 +75,14 @@ import com.kepler.jd.login.KeplerApiManager;
 import com.kepler.jd.sdk.bean.KelperTask;
 import com.kepler.jd.sdk.bean.KeplerAttachParameter;
 import com.kepler.jd.sdk.exception.KeplerBufferOverflowException;
-import me.logg.Logg;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 
-import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -104,6 +94,7 @@ import java.util.TimerTask;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import me.logg.Logg;
 /**
  * 购物车
  */
@@ -907,8 +898,10 @@ public class CarFrament extends BaseViewPagerFragment implements View.OnClickLis
                                 String list = jsonObject1.optString("list");
                                 Logg.json(list);
                                 mcontext = getActivity();
+//
                                 groups = new ArrayList<StoreInfo>();
                                 childs = new HashMap<String, List<GoodsInfo>>();
+//                              sca: 从接口取到的是平铺的商品数据，  然后再加工出店铺组信息。
                                 List<GoodsInfo1> goods = JSON.parseArray(list, GoodsInfo1.class);
                                 if (goods != null && goods.size() > 0) {
                                     listView.setVisibility(View.VISIBLE);
@@ -917,9 +910,12 @@ public class CarFrament extends BaseViewPagerFragment implements View.OnClickLis
                                     titleText2.setVisibility(View.VISIBLE);
                                     for (int i = 0; i < goods.size(); i++) {
                                         groups.add(new StoreInfo(goods.get(i).getDianpuid(), goods.get(i).getDianpu(), goods.get(i).getDianpuyouhui()));
+//                                        sca: 根本就没用到 j。
                                         for (int j = 0; j <= i; j++) {
 //                                        Logg.json(goods.get(i).getList());
+//
                                             List<GoodsInfo> goods1 = JSON.parseArray(goods.get(i).getList(), GoodsInfo.class);
+//                                           sca： 这个写的好像有问题， for 循环中 j 根本就没用到，取得数据可能有重复的，但是覆盖了put
                                             childs.put(groups.get(i).getId(), goods1);
                                         }
                                     }

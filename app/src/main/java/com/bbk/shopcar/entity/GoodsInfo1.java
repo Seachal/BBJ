@@ -6,8 +6,11 @@ package com.bbk.shopcar.entity;
  */
 
 public class GoodsInfo1 {
+//    店铺
     private String dianpu;
+//    店铺 id
     private String dianpuid;
+//    店铺优惠
     private String dianpuyouhui;
     private String list;
 

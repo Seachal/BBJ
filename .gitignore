@@ -6,3 +6,7 @@
 .DS_Store
 /build
 /captures
+/guideview/build
+/jdlmm/build
+/jdsdk_lib/build
+/Log/build

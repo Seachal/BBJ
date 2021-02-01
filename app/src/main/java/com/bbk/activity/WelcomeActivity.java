@@ -199,7 +199,7 @@ public class WelcomeActivity extends BaseActivity2 {
                 }
             }
         }
-//
+//  chales  存入通过抓包拿到的用户 id
         String userID = "220801";
         SharedPreferencesUtil.putSharedData(MyApplication.getApplication(), "userInfor", "userID", userID);
     }
